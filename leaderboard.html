@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leaderboard</title>
+
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        background-color: #464646;
+      }
+
+      .l-container {
+        background-color: #2d2727;
+        height: 70vh;
+        width: 26vw;
+        border-radius: 10px;
+        margin-top: 70px;
+        color: white;
+        box-shadow: 2px 2px 10px black;
+        position: fixed;
+      }
+
+      #sb {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: #efc745;
+        font-size: 45px;
+        margin-left: 62px;
+        margin-bottom: 70px;
+      }
+
+      .score_text {
+        color: #efc745;
+        font-size: 29px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 600;
+        margin-left: 60px;
+      }
+
+      #score {
+        color: white;
+        font-size: 29px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 600;
+      }
+
+      .l-description {
+        color: white;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        width: 23vw;
+        margin-top: 110px;
+        margin-left: 36px;
+        line-height: 30px;
+      }
+
+      a {
+        background-color: #efc745;
+        color: #2d2727;
+        text-decoration: none;
+        font-size: 25px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 900;
+        border-radius: 6px;
+        height: 4vh;
+        width: 7vw;
+        padding-left: 40px;
+        padding-right: -30px;
+        padding-bottom: 14px;
+        padding-top: 15px;
+        box-shadow: 3px 3px 10px rgb(50, 48, 48);
+        margin-left: -900px;
+        margin-top: 70px;
+      }
+
+      a:hover {
+        background-color: #fcc91f;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="index.html">BACK</a>
+    <div class="l-container" onmouseover="reloadfun()">
+      <h1 id="sb">SCORE BOARD</h1>
+      <span class="score_text">Highest Score : </span>
+      <span id="score">0</span>
+
+      <div class="l-description">
+        <!-- Use minumum Moves to be a Highest scorer. -->
+        Memory Match - High Score Challenge is an exciting and addictive
+        card-matching game that will put your memory and concentration to the
+        test. Get ready to embark on a journey of brain-teasing fun as you
+        uncover hidden pairs of cards to rack up your high score.
+      </div>
+    </div>
+    <script>
+      function reloadfun(){
+        location.reload();
+      }
+      let sharedbylsprevious = JSON.parse(localStorage.getItem("highscore"));
+      let sharedbylscurrent = localStorage.getItem('currentscore');
+      if(sharedbylsprevious <= sharedbylscurrent){
+      localStorage.setItem("currentscore", sharedbylsprevious);
+      console.log('dd');
+      var sharedvalueElement = document.getElementById("score");
+        sharedvalueElement.textContent = sharedbylscurrent;
+      }
+      else{
+      var sharedvalueElement = document.getElementById("score");
+        sharedvalueElement.textContent = sharedbylscurrent;
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+      // let sharedbypage = new Array(1);
+      // let sharedbypage = [20];
+
+      //  //only once excecute ;
+      //     if(!localStorage.getItem('adc')){
+      //       sharedbypage[0] = 20;
+      //       localStorage.setItem('adc','true');
+      //     }
+      //     if (sharedbyls <= sharedbypage[0]) {
+      //       sharedbypage[0] = sharedbyls;
+      //     }
+      //        var sharedvalueElement = document.getElementById("score");
+
+      //      sharedvalueElement.textContent = sharedbypage[0];
+      //     var sharedcontent = parseInt(sharedvalueElement.textContent);
+    </script>
+  </body>
+</html>

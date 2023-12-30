@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-main: #464646;
+    --card-: #2D2727;
+    --border-color: #efc745;
+}
+
+h1 {
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 4rem;
+    z-index: 0;
+    position: fixed;
+    margin-bottom: 570px;
+}
+
+span {
+    color: var(--border-color);
+    z-index: 0;
+}
+
+body {
+    background-color: var(--bg-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5rem;
+    height: 100vh;
+    z-index: 0;
+}
+
+#card-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+    z-index: 0;
+    position: fixed;
+    margin-top: 100px;
+}
+
+/* .card{
+    width: 7rem;
+    height: 7rem;
+    background-color: var(--card-);
+    background-size: contain;
+    border-radius: .6rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 2rem;
+}
+
+.card_selected{
+    border: .2rem solid var(--border-color);
+
+}
+
+.card_match{
+    border: .2rem solid purple;
+
+} */
+
+.card {
+    position: relative;
+    transition: all .4s linear;
+    transform-style: preserve-3d;
+    /* padding: 2rem; */
+}
+
+.card:hover {
+    cursor: pointer;
+}
+
+.card,
+.back-card,
+.front-card {
+    height: 7rem;
+    width: 7rem;
+}
+
+.front-card,
+.back-card {
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.front-card {
+    background: var(--border-color);
+    background-size: contain;
+    border-radius: .6rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 2rem;
+}
+
+.back-card {
+    transform: rotateY(180deg);
+    /* background-color: #6589F9; */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 2rem;
+}
+
+.card_selected {
+    transform: rotateY(180deg);
+}
+
+.card_match .front-card {
+    background-color: var(--card-);
+}
+
+.congratulations-message {
+    color: #efc745;
+    background-color: #2D2727;
+    z-index: 1;
+    height: 38vh;
+    width: 30vw;
+    border-radius: 10px;
+    margin-top: 200px;
+    margin-left: 0px;
+    border: 1px solid white;
+    box-shadow: 5px 5px 10px black;
+    
+}
+
+.blur {
+    filter: blur(3px);
+    /* Adjust the blur amount as needed */
+    pointer-events: none;
+    /* Prevent interaction with blurred elements */
+}
+
+
+.congo {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: xx-large;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.congo_buttons {
+    background-color: rgb(150, 31, 150);
+    border: 1px solid white;
+    margin-left: 100px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    height: 70px;
+    width: 280px;
+    color: white;
+    /* color: #2D2727; */
+    font-size: larger;
+    font-weight: 700;
+    cursor: pointer;
+    /* position: fixed; */
+}
+
+.congo_buttons:hover{
+    /* background-color:#efc745; */
+    background-color: rgb(194, 30, 194);
+    
+}
+
+.movtext{
+    color: var(--border-color);
+    margin-top: 10px;
+    margin-right: 14px;
+    font-size: x-large;
+    font-weight: 800;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* display: inline; */
+
+}
+.moves{
+    color: var(--border-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: x-large;
+    font-weight: 800;
+    margin-top: 10px;
+    /* margin-top: 100px; */
+    /* display: inline; */
+}
+
+
+.parent{
+   
+    margin-left: 300px;
+    margin-top: -400px;
+    display: flex;
+    flex-direction: row;
+    padding-left: 200px;
+
+}
+
+a{
+    background-color: #efc745;
+    color:#2D2727;
+    text-decoration: none;
+    font-size: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 900;
+    border-radius: 6px;
+    height: 8vh;
+    width: 9vw;
+    padding-left: 40px;
+    padding-right: -30px;
+    padding-bottom: 14px;
+    padding-top: 15px;
+    box-shadow: 3px 3px 10px rgb(50, 48, 48);
+    margin-left: -900px;
+    /* margin-top: -100px; */
+    margin-right: 240px;
+
+  }
+
+  a:hover{
+    background-color: #fcc91f;
+  }
