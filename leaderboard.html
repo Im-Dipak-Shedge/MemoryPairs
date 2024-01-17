@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -96,32 +96,26 @@
       </div>
     </div>
     <script>
-      function reloadfun(){
+      function reloadfun() {
         location.reload();
       }
       let sharedbylsprevious = JSON.parse(localStorage.getItem("highscore"));
-      let sharedbylscurrent = localStorage.getItem('currentscore');
-      if(sharedbylsprevious <= sharedbylscurrent){
-      localStorage.setItem("currentscore", sharedbylsprevious);
-      console.log('dd');
-      var sharedvalueElement = document.getElementById("score");
+      //part which is going to execute only once
+      let onceonly = localStorage.getItem("onlyonce");
+      if (onceonly === null) {
+        console.log("it is null");
+        localStorage.setItem("currentscore", sharedbylsprevious);
+        localStorage.setItem("onlyonce", "any");
+      }
+      let sharedbylscurrent = localStorage.getItem("currentscore");
+      if (sharedbylsprevious <= sharedbylscurrent) {
+        localStorage.setItem("currentscore", sharedbylsprevious);
+        var sharedvalueElement = document.getElementById("score");
+        sharedvalueElement.textContent = sharedbylscurrent;
+      } else {
+        var sharedvalueElement = document.getElementById("score");
         sharedvalueElement.textContent = sharedbylscurrent;
       }
-      else{
-      var sharedvalueElement = document.getElementById("score");
-        sharedvalueElement.textContent = sharedbylscurrent;
-      }
-
-
-
-
-
-
-
-
-
-
-
 
       // let sharedbypage = new Array(1);
       // let sharedbypage = [20];
