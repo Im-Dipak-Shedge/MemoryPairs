@@ -56,7 +56,6 @@ for (let i = 0; i < shuffuledChild.length; i++) {
   let back_div = document.createElement("div");
   back_div.classList.add("back-card");
   back_div.style.backgroundImage = `url(${shuffuledChild[i].img})`;
-
   parentDiv.appendChild(childDiv);
   childDiv.appendChild(front_div);
   childDiv.appendChild(back_div);

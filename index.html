@@ -67,16 +67,24 @@
       <p>Are you ready to play?</p>
       <ul>
         <li><a href="newgame.html">Play Game</a></li>
-        <li><a href="leaderboard.html">Leaderboard</a></li>
+        <li>
+          <a id="leaderboardButton" href="leaderboard.html">Leaderboard</a>
+        </li>
         <li><a href="about.html">About</a></li>
       </ul>
     </div>
-    <!-- <script src="script.js"></script> -->
-    <!-- <script>
-      function myfun(){
-        let all = window.location.href = 'leaderboard.html';
-        all.location.reload();
+
+    <script>
+      console.log("dipak");
+
+      let checkIfPlayedFirst = localStorage.getItem("highscore");
+      if (checkIfPlayedFirst === null) {
+        let leaderboardButton = document.getElementById("leaderboardButton");
+        leaderboardButton.onclick = (e) => {
+          alert("Please start playing first before viewing the Leaderboard.");
+          e.preventDefault();
+        };
       }
-    </script> -->
+    </script>
   </body>
 </html>
